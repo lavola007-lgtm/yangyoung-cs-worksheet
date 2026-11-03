@@ -362,7 +362,7 @@ $('#dl').onclick = () => {
 /* ---------- autosave to training log ---------- */
 // 교육 기록 시트(Google Apps Script 웹앱) 주소. 비어 있으면 저장하지 않습니다.
 const SAVE_URL = 'https://script.google.com/macros/s/AKfycby0LTRjcy9TnlvGZ20bP44TZAr-UYBx3xPO5xTWn4ykxsWqyQdf9BCsXHKdep16xlle/exec';
-const SID = Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+const SID = Date.now().toString(16) + Array.from(crypto.getRandomValues(new Uint8Array(4)), b => b.toString(16).padStart(2, '0')).join(''); // 16진수만 (Google이 sid 값을 16진수로 검사)
 let lastSent = '', saveT;
 function saveFields(){
   const w = S.who;
