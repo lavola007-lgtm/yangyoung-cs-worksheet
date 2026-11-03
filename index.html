@@ -77,7 +77,7 @@
     <strong>두 가지만 지켜 주세요</strong>
     <ul>
       <li>선생님·아이·학부모의 실명은 적지 않습니다. 학년·관·이니셜이면 충분합니다.</li>
-      <li>이 화면은 어디에도 저장되거나 전송되지 않습니다. 끝나면 <button class="link" data-go="record">내 기록</button>에서 파일로 받아 두세요. 창을 닫으면 지워집니다.</li>
+      <li>입력 내용은 이 화면에만 있습니다. 끝나면 <button class="link" data-go="record">내 기록</button>에서 원장님께 보고하고, 내 것은 파일로 받아 두세요. 보고를 누를 때만 원장님 보고 시트로 보내집니다.</li>
     </ul>
   </div>
 
@@ -386,7 +386,20 @@
 <!-- 내 기록 -->
 <section class="page" id="record" aria-labelledby="h-rec">
   <h2 class="ptitle" id="h-rec">오늘 쓴 것은 <span class="acc">선생님 것</span>입니다</h2>
-  <p class="sub">파일로 받아 두거나 복사해서 내게 보내 두세요. 이 화면은 창을 닫으면 지워집니다.</p>
+  <p class="sub">원장님께 보고하고, 내 것은 파일로 받아 두세요. 이 화면은 창을 닫으면 지워집니다.</p>
+  <div class="card report">
+    <h3 class="card-h">원장님께 보고하기</h3>
+    <p class="sub tight">소속 관 · 역할 · 학년군과 오늘 실습 내용을 원장님이 보는 보고 시트로 보냅니다. 이름은 보내지 않습니다. 보내기 전에 아래 기록에 실명이 없는지 한 번 더 봐 주세요.</p>
+    <label class="f">원장님께 한마디 <small>선택 · 관에서 같이 하고 싶은 것, 도움이 필요한 것</small>
+      <textarea data-k="rep.note" rows="2" maxlength="400" placeholder="예: 신입생 2주차 연락을 관 전체가 같은 날 했으면 합니다"></textarea>
+    </label>
+    <div class="rec-actions" style="margin-top:10px">
+      <button class="btn" id="send" type="button">원장님께 보고</button>
+      <button class="btn ghost" id="share" type="button">메신저로 보내기</button>
+    </div>
+    <p class="toast" id="send-msg" aria-live="polite"></p>
+  </div>
+  <h3 class="card-h">내 기록</h3>
   <div class="rec-actions">
     <button class="btn" id="dl" type="button">파일로 받기 (.txt)</button>
     <button class="btn ghost" data-copy="all" type="button">전체 복사</button>
@@ -403,7 +416,7 @@
 
 <footer class="foot">
   <p>양영학원 선생님 교육 · 이즈유 박현숙 · 2026.11</p>
-  <p>선생님·학생·학부모의 실명은 적지 않습니다. 입력 내용은 이 기기 화면에만 있습니다.</p>
+  <p>선생님·학생·학부모의 실명은 적지 않습니다. "원장님께 보고"를 누를 때만 보고 시트로 보내집니다.</p>
 </footer>
 
 <div class="toast-float" id="toast" role="status" aria-live="polite"></div>

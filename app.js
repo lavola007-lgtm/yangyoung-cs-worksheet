@@ -359,5 +359,43 @@ $('#dl').onclick = () => {
   }
 };
 
+/* ---------- report to director ---------- */
+// 원장님 보고 시트(Google Apps Script 웹앱) 주소. 비어 있으면 메신저 보내기만 안내합니다.
+const REPORT_URL = '';
+let sending = false;
+function reportFields(){
+  const w = S.who;
+  return {
+    branch: w.branch||'', role: w.role||'', grade: (w.grade||[]).join(', '),
+    signals: (S.p1.signals||[]).join(' / '), again: S.p1.again||'',
+    left: S.p3.left||'', pick: S.p4.pick||'', start: `${S.p4.start||''} ${S.p4.when||''}`.trim(),
+    last: S.p4.last||'', note: (S.rep&&S.rep.note)||'', all: buildAll()
+  };
+}
+$('#send').onclick = async () => {
+  const msg = $('#send-msg');
+  if (!S.who.branch) { msg.textContent = '시작 화면에서 소속 관을 먼저 골라 주세요.'; return; }
+  if (!REPORT_URL) { msg.textContent = '보고 시트가 아직 연결되지 않았습니다. "메신저로 보내기"로 원장님께 보내 주세요.'; return; }
+  if (sending) return;
+  sending = true; $('#send').disabled = true; msg.textContent = '보내는 중입니다';
+  try {
+    await fetch(REPORT_URL, { method:'POST', mode:'no-cors', body: new URLSearchParams(reportFields()) });
+    msg.textContent = '원장님께 보고했습니다. 한 번만 누르면 됩니다.';
+    toast('보고했습니다');
+  } catch(e) {
+    msg.textContent = '보내지 못했습니다. 인터넷 연결을 확인하거나 "메신저로 보내기"를 써 주세요.';
+    $('#send').disabled = false;
+  }
+  sending = false;
+};
+$('#share').onclick = async () => {
+  renderAll();
+  const f = reportFields();
+  const txt = `[원장님께 보고 · 양영 실습지]\n${f.note ? '한마디: ' + f.note + '\n\n' : ''}${f.all}`;
+  if (navigator.share) { try { await navigator.share({ title:'양영 실습지 보고', text: txt }); return; } catch(e) { if (e.name === 'AbortError') return; } }
+  const ok = await copyText(txt);
+  $('#send-msg').textContent = ok ? '복사했습니다. 원장님과의 대화창에 붙여 보내 주세요.' : '이 화면에서는 보내기가 막혀 있습니다. 아래 기록을 길게 눌러 복사해 주세요.';
+};
+
 refreshOutputs();
 })();
