@@ -361,7 +361,7 @@ $('#dl').onclick = () => {
 
 /* ---------- autosave to training log ---------- */
 // 교육 기록 시트(Google Apps Script 웹앱) 주소. 비어 있으면 저장하지 않습니다.
-const SAVE_URL = '';
+const SAVE_URL = 'https://script.google.com/macros/s/AKfycbz9dB2vHqZOJfl48KMySI8xFDm54SAG7WSOAuA1Y5PdLo2IW9Hk4YxFaHXgNKv9_pBU/exec';
 const SID = Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
 let lastSent = '', saveT;
 function saveFields(){
