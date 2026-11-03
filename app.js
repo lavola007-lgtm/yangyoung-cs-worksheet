@@ -298,7 +298,7 @@ function buildAll(){
   const L = [];
   const w = S.who;
   L.push('양영학원 선생님 교육 · 실습지', `작성일: ${fmt(new Date())}`);
-  L.push(`이름: ${w.name||''} / 소속: ${w.branch||''} / 역할: ${w.role||''} / 학년군: ${(w.grade||[]).join(', ')}`, '');
+  L.push(`소속: ${w.branch||''} / 역할: ${w.role||''} / 학년군: ${(w.grade||[]).join(', ')}`, '');
   L.push('■ 실습 1 · 그 아이의 첫 신호');
   L.push(`그만둔 아이: ${S.p1.who||''}`, `그때 내가 보던 것: ${S.p1.saw||''}`, `보였던 신호: ${(S.p1.signals||[]).join(' / ')}`, `다시 온다면: ${S.p1.again||''}`, '');
   L.push('■ 실습 2 · 관찰 한 줄');
@@ -350,7 +350,7 @@ $('#dl').onclick = () => {
   try {
     const blob = new Blob(['\ufeff' + txt], {type:'text/plain;charset=utf-8'});
     const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
-    const nm = (S.who.name||'실습지').replace(/[\\/:*?"<>|\s]/g,'');
+    const nm = (S.who.branch||'실습지').replace(/[\\/:*?"<>|\s]/g,'');
     a.download = `양영_실습지_${nm}.txt`; document.body.appendChild(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(a.href), 2000);
     $('#rec-msg').textContent = '파일 받기를 눌렀습니다. 받기가 안 되면 "전체 복사"를 눌러 메모장이나 메신저에 붙여 두세요.';
