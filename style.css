@@ -44,7 +44,7 @@ small{font-size:var(--fs-xs);color:var(--gray);font-weight:400}
 /* hero */
 .hero{display:grid;grid-template-columns:1fr 200px;gap:20px;align-items:center;margin:8px 0 22px}
 .hero-img{width:200px;mix-blend-mode:multiply}
-@media (max-width:600px){.hero{grid-template-columns:1fr 104px}.hero-img{width:104px}}
+@media (max-width:600px){.hero{grid-template-columns:1fr}.hero-img{display:none}h1{font-size:1.75rem}}
 
 /* cards */
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin:0 0 14px}
