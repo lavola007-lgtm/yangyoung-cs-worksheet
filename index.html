@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>양영학원 선생님 실습지</title>
+<meta name="description" content="양영학원 선생님 교육 실습지. 퇴원 신호, 관찰 한 줄, 네 칸 응대, 30일 실천과 현장 도구.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<header class="top">
+  <div class="top-in">
+    <span class="brand">ISYOU</span>
+    <span class="top-title">양영학원 선생님 교육 · 실습지</span>
+  </div>
+  <nav class="tabs" aria-label="실습 순서">
+    <button data-go="intro" class="on">시작</button>
+    <button data-go="p1">실습 1</button>
+    <button data-go="p2">실습 2</button>
+    <button data-go="p3">실습 3</button>
+    <button data-go="p4">실습 4</button>
+    <button data-go="tools">도구함</button>
+    <button data-go="record">내 기록</button>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- 시작 -->
+<section class="page on" id="intro" aria-labelledby="h-intro">
+  <div class="hero">
+    <div>
+      <p class="eyebrow">2026. 11 · 120분 · 전 관 공통</p>
+      <h1 id="h-intro">선생님의 상담이 곧<br><span class="acc">양영의 브랜드</span>입니다</h1>
+      <p class="lead">오늘 네 번 씁니다. 한 번은 떠올리고, 한 번은 관찰을 적고, 한 번은 소리 내어 말하고, 마지막에 내일부터 할 한 가지를 고릅니다.</p>
+    </div>
+    <img src="img/cover.png" alt="" class="hero-img" width="360" height="440">
+  </div>
+
+  <div class="card">
+    <h2 class="card-h">누구의 실습지인가요</h2>
+    <div class="grid2">
+      <label class="f">이름 <small>선택 · 내 기록 파일에만 들어갑니다</small>
+        <input id="who-name" data-k="who.name" autocomplete="off" placeholder="예: 김OO">
+      </label>
+      <label class="f">소속 관
+        <select id="who-branch" data-k="who.branch">
+          <option value="">고르기</option>
+          <option>둔산 본원</option>
+          <option>도안센터</option>
+          <option>세종 나성센터</option>
+          <option>세종 아름센터</option>
+          <option>기타</option>
+        </select>
+      </label>
+      <div class="f">역할
+        <div class="chips" data-single="who.role">
+          <button type="button" data-v="강사">강사</button>
+          <button type="button" data-v="상담·데스크">상담·데스크</button>
+          <button type="button" data-v="관리자">관리자</button>
+        </div>
+      </div>
+      <div class="f">담당 학년군
+        <div class="chips" data-multi="who.grade">
+          <button type="button" data-v="초등">초등</button>
+          <button type="button" data-v="중등">중등</button>
+          <button type="button" data-v="고등">고등</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="notice">
+    <strong>두 가지만 지켜 주세요</strong>
+    <ul>
+      <li>아이와 학부모의 실명은 적지 않습니다. 학년·관·이니셜이면 충분합니다.</li>
+      <li>이 화면은 어디에도 저장되거나 전송되지 않습니다. 끝나면 <button class="link" data-go="record">내 기록</button>에서 파일로 받아 두세요. 창을 닫으면 지워집니다.</li>
+    </ul>
+  </div>
+
+  <ol class="flow">
+    <li><button data-go="p1"><b>실습 1</b><span>혼자 4분 · 그 아이의 첫 신호</span></button></li>
+    <li><button data-go="p2"><b>실습 2</b><span>5분 · 관찰 한 줄</span></button></li>
+    <li><button data-go="p3"><b>실습 3</b><span>두 사람씩 8분 · 네 칸 응대 롤플레이</span></button></li>
+    <li><button data-go="p4"><b>실습 4</b><span>1분 · 내일부터 한 가지</span></button></li>
+  </ol>
+</section>
+
+<!-- 실습 1 -->
+<section class="page" id="p1" aria-labelledby="h-p1">
+  <div class="phead">
+    <span class="pill">실습 1 · 혼자 4분</span>
+    <div class="timer" data-min="4"></div>
+  </div>
+  <h2 class="ptitle" id="h-p1">최근 그만둔 아이 한 명,<br><span class="acc">첫 신호</span>는 언제였나요?</h2>
+  <p class="sub">퇴원을 통보받은 날이 아니라, 그보다 앞선 어느 수업을 떠올립니다.</p>
+
+  <div class="rows">
+    <label class="row"><span class="n">1</span><span class="rl">그만둔 아이<small>이름 대신 학년·관·시기만</small></span>
+      <input data-k="p1.who" placeholder="예: 중2 · 3월 등록 · 7월 퇴원"></label>
+    <label class="row"><span class="n">2</span><span class="rl">그때 내가 보던 것<small>숙제 검사, 진도, 월말평가 점수…</small></span>
+      <input data-k="p1.saw" placeholder="예: 숙제 검사와 진도였습니다"></label>
+    <div class="row col"><span class="n">3</span><span class="rl">보였던 신호<small>해당하는 것을 모두 고릅니다</small></span>
+      <div class="chips wrap" data-multi="p1.signals">
+        <button type="button" data-v="질문이 줄었습니다">질문이 줄었습니다</button>
+        <button type="button" data-v="숙제 제출이 늦어졌습니다">숙제 제출이 늦어졌습니다</button>
+        <button type="button" data-v="지각이 늘고, 자리가 뒤로 갔습니다">지각이 늘고, 자리가 뒤로 갔습니다</button>
+        <button type="button" data-v="월말평가가 두 번 연속 내려갔습니다" class="yy">월말평가가 두 번 연속 내려갔습니다</button>
+        <button type="button" data-v="레벨업 탈락 뒤 말이 없어졌습니다" class="yy">레벨업 탈락 뒤 말이 없어졌습니다</button>
+        <button type="button" data-v="학부모 연락이 뜸해졌습니다">학부모 연락이 뜸해졌습니다</button>
+      </div>
+      <p class="hint"><span class="dot"></span> 표시는 레벨·월말평가 시스템이 있는 양영에서 특히 보이는 신호입니다.</p>
+    </div>
+    <label class="row"><span class="n">4</span><span class="rl">다시 온다면<small>신호를 본 다음 날 할 한 가지</small></span>
+      <input data-k="p1.again" placeholder="예: 첫 하락 다음 수업에서 3분 따로 물어봅니다"></label>
+  </div>
+
+  <details class="ex">
+    <summary>예시 보기</summary>
+    <dl>
+      <dt>그만둔 아이</dt><dd>중2 · 3월 등록 · 7월 퇴원</dd>
+      <dt>그때 내가 보던 것</dt><dd>숙제 검사와 진도였습니다</dd>
+      <dt>보였던 신호</dt><dd>질문이 줄고, 월말평가가 두 번 연속 내려갔습니다</dd>
+      <dt>다시 온다면</dt><dd>첫 하락 다음 수업에서 3분 따로 물어봅니다</dd>
+    </dl>
+  </details>
+
+  <p class="close">신호가 보이면, 이미 늦기 시작한 것입니다. 그래서 다음 실습에서는 아직 떠나지 않은 아이 한 명을 봅니다.</p>
+  <div class="next"><button class="btn" data-go="p2">실습 2로</button></div>
+</section>
+
+<!-- 실습 2 -->
+<section class="page" id="p2" aria-labelledby="h-p2">
+  <div class="phead">
+    <span class="pill">실습 2 · 5분</span>
+    <div class="timer" data-min="5"></div>
+  </div>
+  <h2 class="ptitle" id="h-p2">지금, <span class="acc">관찰 한 줄</span>을 써 봅니다</h2>
+  <p class="sub">칭찬이나 평가가 아니라, 내가 직접 본 장면입니다. 한 줄이면 충분합니다.</p>
+
+  <div id="obs-list"></div>
+  <button class="btn ghost" id="obs-add" type="button">한 명 더 쓰기</button>
+
+  <div class="contrast">
+    <div><span class="tag bad">관찰이 아닙니다</span><p>"성실한데 실수가 많아요"</p></div>
+    <div><span class="tag good">관찰입니다</span><p>"화요일, 21번에서 멈춘 채 30분 앉아 있었습니다"</p></div>
+  </div>
+  <p class="close">하루 한 명이면 한 달에 스무 명입니다.</p>
+  <div class="next"><button class="btn" data-go="p3">실습 3으로</button></div>
+</section>
+
+<!-- 실습 3 -->
+<section class="page" id="p3" aria-labelledby="h-p3">
+  <div class="phead">
+    <span class="pill">실습 3 · 두 사람씩 8분</span>
+    <div class="timer" data-min="8"></div>
+  </div>
+  <h2 class="ptitle" id="h-p3">두 사람씩, <span class="acc">실제로</span> 해 봅니다</h2>
+  <p class="sub">학부모 한 명, 선생님 한 명. 네 칸으로 답하고, 끝나면 역할을 바꿉니다.</p>
+
+  <div class="card">
+    <h3 class="card-h">1. 장면을 고릅니다</h3>
+    <div class="scene-grid" id="scene-grid"></div>
+  </div>
+
+  <div class="card">
+    <div class="role-bar">
+      <h3 class="card-h">2. 지금 나는</h3>
+      <div class="seg" role="tablist" aria-label="역할">
+        <button type="button" role="tab" data-role="t" class="on" aria-selected="true">선생님</button>
+        <button type="button" role="tab" data-role="p" aria-selected="false">학부모</button>
+      </div>
+      <span class="round" id="round">1회차</span>
+    </div>
+
+    <div id="role-p" hidden>
+      <p class="say-label">이렇게 시작하세요</p>
+      <p class="say" id="p-open"></p>
+      <p class="say-label">선생님이 답하면, 한 번 더 이렇게 물어봅니다</p>
+      <p class="say soft" id="p-push"></p>
+      <p class="hint">학부모 자리에서는 선생님의 답 중 마음이 놓인 말과 걸린 말을 기억해 둡니다.</p>
+    </div>
+
+    <div id="role-t">
+      <p class="say-label">학부모의 첫마디</p>
+      <p class="say" id="t-open"></p>
+      <div class="four">
+        <label class="cell"><span class="cn">1 수용</span><small>방어하지 않고 먼저 받습니다</small>
+          <textarea rows="2" data-k4="accept" placeholder="그렇게 느끼실 수 있습니다…"></textarea><span class="fb" data-fb="accept"></span></label>
+        <label class="cell"><span class="cn">2 장면</span><small>평가가 아니라 내가 본 것</small>
+          <textarea rows="2" data-k4="sceneText" placeholder="제가 이번 주 본 것은…"></textarea><span class="fb" data-fb="sceneText"></span></label>
+        <label class="cell"><span class="cn">3 계획</span><small>"해 보겠습니다" 대신 무엇을</small>
+          <textarea rows="2" data-k4="plan" placeholder="다음 두 수업에서…"></textarea><span class="fb" data-fb="plan"></span></label>
+        <label class="cell"><span class="cn">4 시점</span><small>언제 다시 말씀드릴지</small>
+          <textarea rows="2" data-k4="when" placeholder="이번 주 금요일에…"></textarea><span class="fb" data-fb="when"></span></label>
+      </div>
+      <details class="ex" id="script-box">
+        <summary>막히면 열어 봅니다 · 장표의 기준 문장</summary>
+        <div id="script"></div>
+      </details>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="card-h">3. 역할을 바꿉니다</h3>
+    <p class="sub tight">바꾸면 지금 쓴 네 칸은 1회차로 남고, 새 칸이 열립니다.</p>
+    <button class="btn" id="swap" type="button">역할 바꾸기</button>
+    <label class="f mt">역할을 바꾼 뒤, 어떤 문장이 남았나요 <small>학부모 자리에서 마음이 놓인 말, 걸린 말</small>
+      <textarea rows="3" data-k="p3.left" placeholder="예: '금요일에 먼저 연락드리겠습니다'라는 말에 마음이 놓였습니다"></textarea>
+    </label>
+  </div>
+  <div class="next"><button class="btn" data-go="p4">실습 4로</button></div>
+</section>
+
+<!-- 실습 4 -->
+<section class="page" id="p4" aria-labelledby="h-p4">
+  <div class="phead">
+    <span class="pill">실습 4 · 1분</span>
+    <div class="timer" data-min="1"></div>
+  </div>
+  <h2 class="ptitle" id="h-p4">내일부터 이 세 가지 중 <span class="acc">하나</span>, 30일</h2>
+  <p class="sub">셋 다 하지 않아도 됩니다. 하나면 충분합니다.</p>
+
+  <div class="pick" data-single="p4.pick">
+    <button type="button" data-v="내 반에서 이름을 부를 다섯 명을 정합니다"><b>01</b><span>내 반에서 이름을 부를 다섯 명을 정합니다</span><small>오늘 저녁에 정해도 됩니다</small></button>
+    <button type="button" data-v="관찰 한 줄을 하루에 한 명씩 씁니다"><b>02</b><span>관찰 한 줄을 하루에 한 명씩 씁니다</span><small>한 달이면 스무 명입니다</small></button>
+    <button type="button" data-v="신입생에게는 2주차에 먼저 연락합니다"><b>03</b><span>신입생에게는 2주차에 먼저 연락합니다</span><small>담임이 직접 합니다</small></button>
+  </div>
+
+  <div class="card" id="five" hidden>
+    <h3 class="card-h">다섯 명 <small>이니셜로</small></h3>
+    <div class="five">
+      <input data-k="p4.n1" aria-label="1번째 아이" placeholder="1"><input data-k="p4.n2" aria-label="2번째 아이" placeholder="2"><input data-k="p4.n3" aria-label="3번째 아이" placeholder="3"><input data-k="p4.n4" aria-label="4번째 아이" placeholder="4"><input data-k="p4.n5" aria-label="5번째 아이" placeholder="5">
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="card-h">언제 시작합니까</h3>
+    <div class="chips" data-single="p4.start">
+      <button type="button" data-v="오늘 저녁">오늘 저녁</button>
+      <button type="button" data-v="이번 주">이번 주</button>
+      <button type="button" data-v="다음 주 월요일">다음 주 월요일</button>
+    </div>
+    <label class="f mt">요일과 시간까지 적으면 지켜집니다
+      <input data-k="p4.when" placeholder="예: 수요일 6시 수업 끝나고 10분">
+    </label>
+  </div>
+
+  <div class="card">
+    <h3 class="card-h">마지막 한 줄</h3>
+    <label class="f">오늘 기억에 남은 말, 또는 궁금한 것
+      <textarea rows="3" data-k="p4.last" placeholder="마이크가 오면 그대로 읽어도 됩니다"></textarea>
+    </label>
+  </div>
+
+  <div class="three">
+    <p class="eyebrow">오늘 남길 세 문장</p>
+    <ol>
+      <li>감정에는 위로로, 판단에는 근거로 답합니다</li>
+      <li>칭찬이 아니라 관찰로 말합니다</li>
+      <li>모르는 것은 단정하지 않고, 약속한 날짜에 먼저 연락합니다</li>
+    </ol>
+  </div>
+  <div class="next"><button class="btn" data-go="record">내 기록 받기</button></div>
+</section>
+
+<!-- 도구함 -->
+<section class="page" id="tools" aria-labelledby="h-tools">
+  <h2 class="ptitle" id="h-tools">오늘 만든 도구, <span class="acc">내일 바로</span> 씁니다</h2>
+  <p class="sub">장표 68쪽의 종이 한 장 도구들입니다. 칸을 채우고 복사해서 메신저나 기록지에 붙이면 됩니다.</p>
+
+  <div class="tool-tabs" role="tablist" aria-label="도구">
+    <button type="button" class="on" data-tool="rx">처방 세 줄</button>
+    <button type="button" data-tool="four">응대 네 칸</button>
+    <button type="button" data-tool="absent">결석 3색</button>
+    <button type="button" data-tool="handover">인계 한 장</button>
+    <button type="button" data-tool="cal">90일 달력</button>
+    <button type="button" data-tool="words">상담 언어</button>
+  </div>
+
+  <!-- 처방 세 줄 -->
+  <div class="tool on" id="t-rx">
+    <h3 class="tool-h">레벨테스트 상담 · 처방 세 줄 <small>CASE 01</small></h3>
+    <p class="sub tight">상담한 사람이 적어 첫 수업 전 담임에게 넘깁니다. 레벨 이름보다 막힌 지점과 다음 연락 날짜가 남아야 합니다.</p>
+    <div class="rows">
+      <label class="row"><span class="n">1</span><span class="rl">지금 위치</span><input data-k="rx.now" placeholder="현재 학년 개념은 안정적이고, 심화 문항에서 시간이 부족했습니다"></label>
+      <label class="row"><span class="n">2</span><span class="rl">막힌 지점</span><input data-k="rx.stuck" placeholder="도형 단원 서술 과정에서 두 번 멈췄습니다"></label>
+      <label class="row"><span class="n">3</span><span class="rl">첫 4주 계획</span><input data-k="rx.plan" placeholder="이 반에서 첫 4주는 이 부분을 먼저 확인합니다"></label>
+      <label class="row"><span class="n">+</span><span class="rl">다음 연락 날짜</span><input type="date" data-k="rx.date"></label>
+      <label class="row"><span class="n">+</span><span class="rl">받는 담임</span><input data-k="rx.to" placeholder="예: 중등수학관 김OO 선생님"></label>
+    </div>
+    <div class="out"><pre data-out="rx"></pre><button class="btn ghost copy" data-copy="rx" type="button">복사</button></div>
+  </div>
+
+  <!-- 응대 네 칸 -->
+  <div class="tool" id="t-four">
+    <h3 class="tool-h">학부모 응대 네 칸 카드</h3>
+    <p class="sub tight">코팅해서 교무실과 데스크에 둡니다. 네 칸을 순서대로 지나면, 응대가 사람에 따라 흔들리지 않습니다.</p>
+    <div class="fourcard">
+      <div><b>1 수용</b><p>"그렇게 느끼실 수 있습니다"</p></div>
+      <div><b>2 장면</b><p>"제가 본 것은 이것입니다"</p></div>
+      <div><b>3 계획</b><p>"이렇게 하겠습니다"</p></div>
+      <div><b>4 시점</b><p>"금요일에 다시 말씀드리겠습니다"</p></div>
+    </div>
+    <div class="ng-ok">
+      <p><span class="tag bad">피합니다</span> "해 보겠습니다" · "신경 쓰겠습니다" · "원래 그 반은…" · "조금만 더 열심히 하면"</p>
+      <p><span class="tag good">이렇게</span> 무엇을, 언제까지, 누가 하는지 한 문장에 넣습니다</p>
+    </div>
+  </div>
+
+  <!-- 결석 3색 -->
+  <div class="tool" id="t-absent">
+    <h3 class="tool-h">데스크 결석 3색 <small>출석부 스티커</small></h3>
+    <p class="sub tight">결석 전화를 받으면 세 가지를 확인합니다. 노랑과 빨강만 담임에게 넘깁니다.</p>
+    <div class="grid2">
+      <div class="f">신규생인가요 <small>등록 후 첫 달 기준 · 관 기준에 맞춰 조정</small>
+        <div class="chips" data-single="ab.new"><button type="button" data-v="예">예</button><button type="button" data-v="아니요">아니요</button></div>
+      </div>
+      <div class="f">연속 결석 횟수 <small>오늘 포함</small>
+        <div class="chips" data-single="ab.count"><button type="button" data-v="1">1회</button><button type="button" data-v="2">2회</button><button type="button" data-v="3">3회 이상</button></div>
+      </div>
+      <div class="f">학교 시험 2주 전인가요
+        <div class="chips" data-single="ab.exam"><button type="button" data-v="예">예</button><button type="button" data-v="아니요">아니요</button></div>
+      </div>
+      <div class="f">사유
+        <div class="chips" data-single="ab.why"><button type="button" data-v="질병·가정사">질병·가정사</button><button type="button" data-v="단순 결석">단순 결석</button><button type="button" data-v="모름">말하지 않음</button></div>
+      </div>
+    </div>
+    <div class="absent-out" id="ab-out" aria-live="polite">
+      <span class="sw" id="ab-sw"></span>
+      <div><b id="ab-color">항목을 고르면 색이 나옵니다</b><p id="ab-act"></p></div>
+    </div>
+    <p class="hint">"오늘 결석했습니다"(행정)가 아니라 "숙제와 질문이 줄던 중의 결석이라, 복귀하면 적응을 먼저 보겠습니다"(관리)로 넘깁니다.</p>
+  </div>
+
+  <!-- 인계 한 장 -->
+  <div class="tool" id="t-handover">
+    <h3 class="tool-h">반 이동·담당 변경 · 인계 한 장 <small>CASE 05</small></h3>
+    <p class="sub tight">사람이 바뀌어도 아이의 이야기는 이어져야 합니다.</p>
+    <div class="rows">
+      <label class="row"><span class="n">0</span><span class="rl">아이<small>학년·관·이니셜</small></span><input data-k="ho.who" placeholder="예: 중1 · 도안 · J"></label>
+      <label class="row"><span class="n">1</span><span class="rl">이 아이의 시작점<small>처음 왔을 때 어디에</small></span><input data-k="ho.start"></label>
+      <label class="row"><span class="n">2</span><span class="rl">지금의 장면<small>최근 한 달 안에 본 것</small></span><input data-k="ho.scene"></label>
+      <label class="row"><span class="n">3</span><span class="rl">강점<small>계속 살려 줄 것</small></span><input data-k="ho.strong"></label>
+      <label class="row"><span class="n">4</span><span class="rl">학부모가 걱정하는 것<small>상담에서 나온 말 그대로</small></span><input data-k="ho.worry"></label>
+      <label class="row"><span class="n">5</span><span class="rl">우리가 한 약속<small>언제, 무엇을</small></span><input data-k="ho.promise"></label>
+      <label class="row"><span class="n">6</span><span class="rl">다음 담당자의 첫 주 확인<small>딱 한 가지</small></span><input data-k="ho.first"></label>
+    </div>
+    <div class="out"><pre data-out="ho"></pre><button class="btn ghost copy" data-copy="ho" type="button">복사</button></div>
+  </div>
+
+  <!-- 90일 달력 -->
+  <div class="tool" id="t-cal">
+    <h3 class="tool-h">신입생 90일 이벤트 달력</h3>
+    <p class="sub tight">등록일을 넣으면 챙길 날짜가 나옵니다. 이번 주에 6주차가 되는 아이가 누구인지, 달력이 알려 줍니다.</p>
+    <div class="grid2">
+      <label class="f">아이 <small>이니셜</small><input data-k="cal.who" placeholder="예: 초5 · 둔산 · K"></label>
+      <label class="f">첫 수업일<input type="date" data-k="cal.date"></label>
+    </div>
+    <ol class="cal" id="cal-out"></ol>
+    <div class="out"><pre data-out="cal"></pre><button class="btn ghost copy" data-copy="cal" type="button">복사</button></div>
+  </div>
+
+  <!-- 상담 언어 -->
+  <div class="tool" id="t-words">
+    <h3 class="tool-h">상담 언어 점검 <small>1부 정책 흐름</small></h3>
+    <p class="sub tight">선행 대신 심화·결손·학교 진도 연계로 설명합니다. 내부 상담 언어 점검용 예시이며, 교습과정·광고 문구 적용은 관할 교육청 확인이 필요합니다.</p>
+    <div class="swap-list">
+      <div><p class="bad-l">"다음 학년 진도 미리 빼 드릴게요"</p><p class="good-l">"지금 학년 개념을 심화까지 다지고, 학교 진도와 맞춰 갑니다"</p></div>
+      <div><p class="bad-l">"레벨 올리려면 선행부터 하세요"</p><p class="good-l">"막힌 단원부터 채우면 다음 반으로 갈 근거가 생깁니다"</p></div>
+      <div><p class="bad-l">"다른 애들은 다 1년 앞서 있어요"</p><p class="good-l">"이 아이에게 지금 필요한 건 이 단원입니다"</p></div>
+    </div>
+    <h4 class="mini-h">입시 질문은 확정·미확정을 나눠 답합니다 <small>2026.11.3 확인 기준</small></h4>
+    <ul class="status">
+      <li><span class="st gray">미확정</span>수능 서·논술형 — "수능 논술 대비"가 아니라 "내신 서술형 대비"로 설명합니다</li>
+      <li><span class="st">교육부 계획</span>정시 새 수험번호 — 눈치 지원보다 미리 접수를 권합니다</li>
+      <li><span class="st">발의·심사 중</span>학원 선행 유발 교습·모집 금지 법안 — 통과 여부와 최종 내용은 미정입니다</li>
+    </ul>
+    <p class="hint">모르는 것은 "아직 정해지지 않았습니다"라고 말하는 것이 신뢰입니다.</p>
+  </div>
+</section>
+
+<!-- 내 기록 -->
+<section class="page" id="record" aria-labelledby="h-rec">
+  <h2 class="ptitle" id="h-rec">오늘 쓴 것은 <span class="acc">선생님 것</span>입니다</h2>
+  <p class="sub">파일로 받아 두거나 복사해서 내게 보내 두세요. 이 화면은 창을 닫으면 지워집니다.</p>
+  <div class="rec-actions">
+    <button class="btn" id="dl" type="button">파일로 받기 (.txt)</button>
+    <button class="btn ghost" data-copy="all" type="button">전체 복사</button>
+  </div>
+  <p class="toast" id="rec-msg" aria-live="polite"></p>
+  <pre class="rec" data-out="all"></pre>
+  <div class="bye">
+    <img src="img/shake.png" alt="" width="320" height="300">
+    <p>아이를 가르치는 사람에서,<br>아이의 장면을 남기는 사람으로.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <p>양영학원 선생님 교육 · 이즈유 박현숙 · 2026.11</p>
+  <p>학생과 학부모의 실명은 적지 않습니다. 입력 내용은 이 기기 화면에만 있습니다.</p>
+</footer>
+
+<div class="toast-float" id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
